@@ -1,4 +1,5 @@
 #![allow(dead_code, unused_imports, unused_must_use)]
+#![no_main]
 
 use std::borrow::{Borrow, BorrowMut};
 use wasmedge_quickjs::*;
@@ -19,6 +20,7 @@ fn args_parse() -> (String, Vec<String>) {
     (file_path, res_args)
 }
 
+#[no_mangle]
 fn main() {
     use wasmedge_quickjs as q;
     let mut rt = q::Runtime::new();
